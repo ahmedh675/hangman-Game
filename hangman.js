@@ -24,7 +24,6 @@ let randomCategory = Object.keys(categories)[Math.floor(Math.random() * Object.k
 let randomValue = categories[randomCategory][Math.floor(Math.random() * categories[randomCategory].length)];
 
 let letterAndSpaces = Array.from(randomValue);
-console.log(letterAndSpaces.length)
 let categoryName = document.querySelector(".categorys span");
 categoryName.innerHTML = randomCategory.charAt(0).toUpperCase() + randomCategory.slice(1) + " | " + randomValue.length + ` ,${randomValue}`;
 
@@ -60,7 +59,6 @@ document.addEventListener("click", (e) => {
                 e.target.classList.add("found");
                 theLettersSpan[index].classList.add("found");
                 successAttempts++;
-                console.log(successAttempts)
                 if(successAttempts === letterAndSpaces.length){
                     success()
                 }
@@ -102,3 +100,4 @@ function success() {
     // Disable clicking on letters
     letters.classList.add("finished");
 }
+
